@@ -79,6 +79,33 @@ class RegisterController extends Controller
         if($request->isMethod('post')){
             $data = $request->input();
 
+            Validator::make($data,
+            [
+                'UserName' => ['required', 'UserName','between:4,12'],
+                'MailAdress' => ['required', 'MailAdress','between:4,12','required|unique:categories,MailAdress'],
+                'Password' => ['required', 'between:4,12','alpha_num','categoriesPassword'],
+                'Password confirm' => ['required', 'alpha_num','between:4,12', 'unique:categoriesPassword','same:password'],
+                ],
+
+            [
+                'UserName.required' => '入力必須',
+                'UserName.between:4,12' => '4〜12文字以上で入力してください',
+                'MailAdress.required' => '入力必須',
+                'MailAdress.required|unique:categories,MailAdress' => '登録済みアドレス使用不可',
+                'MailAdress.between:4,12' => '4〜12文字以上で入力してください',
+                'Password.required' => '入力必修',
+                'Password.alpha_num' => '英数字のみ',
+                'Password.between:4,12' => '4〜12文字以上で入力してください',
+                'Password.required|unique:categoriesPassword' => '登録済みPass使用不可',
+                'Password confirm.required' => '入力必須',
+                'Password confirm.alpha_num' => '英数字のみ',
+                'Password confirm.between:4,12' => '4〜12文字以上で入力してください',
+                'Password.confirm.required|unique:categoriesPassword' => '登録済みPass使用不可',
+                'Password confirm.same' => 'Password入力と一致必修',
+            ]
+        );
+
+
             $this->create($data);
             return redirect('added');
         }
