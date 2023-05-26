@@ -106,7 +106,6 @@ class RegisterController extends Controller
 
             $this->create($data);
             session(['key' => 'create($data)']);
-
             return redirect('added');
         }
         return view('auth.register');
@@ -114,5 +113,6 @@ class RegisterController extends Controller
 
     public function added(){
         return view('auth.added');
+        $data = session('key');
     }
 }
