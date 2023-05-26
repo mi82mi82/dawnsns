@@ -84,7 +84,7 @@ class RegisterController extends Controller
                 'UserName' => ['required', 'UserName','between:4,12'],
                 'MailAdress' => ['required', 'MailAdress','between:4,12','required|unique:categories,MailAdress'],
                 'Password' => ['required', 'between:4,12','alpha_num','categoriesPassword'],
-                'Password confirm' => ['required', 'alpha_num','between:4,12', 'unique:categoriesPassword','same:password'],
+                'Password confirm' => ['required', 'alpha_num','between:4,12', 'unique:categoriesPassword''same:password'],
                 ],
 
             [
