@@ -81,29 +81,27 @@ class RegisterController extends Controller
 
             Validator::make($data,
             [
-                'UserName' => ['required', 'UserName','between:4,12'],
-                'MailAdress' => ['required', 'MailAdress','between:4,12','required|unique:categories,MailAdress'],
-                'Password' => ['required', 'between:4,12','alpha_num','categoriesPassword'],
-                'Password confirm' => ['required', 'alpha_num','between:4,12','unique:categoriesPassword','same:password'],
+                'username' => ['required','between:4,12'],
+                'mail' => ['required', 'email','between:4,12','unique'],
+                'password' => ['required', 'between:4,12','alpha_num'],
+                'password-confirm' => ['required', 'alpha_num','between:4,12','same:password'],
                 ],
 
             [
-                'UserName.required' => '入力必須',
-                'UserName.between:4,12' => '4〜12文字以上で入力してください',
-                'MailAdress.required' => '入力必須',
-                'MailAdress.required|unique:categories,MailAdress' => '登録済みアドレス使用不可',
-                'MailAdress.between:4,12' => '4〜12文字以上で入力してください',
-                'Password.required' => '入力必修',
-                'Password.alpha_num' => '英数字のみ',
-                'Password.between:4,12' => '4〜12文字以上で入力してください',
-                'Password.required|unique:categoriesPassword' => '登録済みPass使用不可',
-                'Password confirm.required' => '入力必須',
-                'Password confirm.alpha_num' => '英数字のみ',
-                'Password confirm.between:4,12' => '4〜12文字以上で入力してください',
-                'Password.confirm.required|unique:categoriesPassword' => '登録済みPass使用不可',
-                'Password confirm.same' => 'Password入力と一致必修',
+                'username.required' => '入力必須',
+                'username.between' => '4〜12文字以上で入力してください',
+                'mail.required' => '入力必須',
+                'mail.unique' => '登録済みアドレス使用不可',
+                'mail.between' => '4〜12文字以上で入力してください',
+                'password.required' => '入力必須',
+                'password.alpha_num' => '英数字のみ',
+                'password.between' => '4〜12文字以上で入力してください',
+                'password-confirm.required' => '入力必須',
+                'password-confirm.alpha_num' => '英数字のみ',
+                'password-confirm.between' => '4〜12文字以上で入力してください',
+                'password-confirm.same' => 'Password入力と一致必須',
             ]
-        );
+        )->validate();
 
 
             $this->create($data);
