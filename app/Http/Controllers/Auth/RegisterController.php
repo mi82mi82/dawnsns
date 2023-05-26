@@ -101,7 +101,7 @@ class RegisterController extends Controller
                 'password-confirm.between' => '4〜12文字以上で入力してください',
                 'password-confirm.same' => 'Password入力と一致必須',
             ]
-        )->validate();
+        )->validate(['email' => 'string|email|unique:users']);
 
 
             $this->create($data);
