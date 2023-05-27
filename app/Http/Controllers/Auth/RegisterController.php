@@ -82,7 +82,7 @@ class RegisterController extends Controller
             Validator::make($data,
             [
                 'username' => ['required','between:4,12'],
-                'mail' => ['required', 'email','between:4,12','unique'],
+                'mail' => ['required', 'email','between:4,12','unique:users'],
                 'password' => ['required', 'between:4,12','alpha_num'],
                 'password-confirm' => ['required', 'alpha_num','between:4,12','same:password'],
                 ],
@@ -101,7 +101,7 @@ class RegisterController extends Controller
                 'password-confirm.between' => '4〜12文字以上で入力してください',
                 'password-confirm.same' => 'Password入力と一致必須',
             ]
-        )->validate(['email' => 'string|email|unique:users']);
+        )->validate();
 
 
             $this->create($data);
