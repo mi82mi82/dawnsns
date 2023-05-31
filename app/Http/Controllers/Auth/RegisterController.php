@@ -112,7 +112,7 @@ class RegisterController extends Controller
     }
 
     public function added(){
-        return view('auth.added');
+        return view('auth.added',compact('data'));
         $data = session('key');
     }
 }
