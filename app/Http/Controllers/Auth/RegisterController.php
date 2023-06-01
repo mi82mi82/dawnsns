@@ -1,6 +1,9 @@
 <?php
 
 session_start();
+$_SESSION["key"] = "登録者名前表示";
+
+echo $_SESSION["key"];
 
 namespace App\Http\Controllers\Auth;
 
