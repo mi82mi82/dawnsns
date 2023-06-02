@@ -9,7 +9,7 @@ class PostsController extends Controller
 {
     //
     public function index(){
-        return view('posts.index');
         $user = auth()->user();
+        return view('posts.index',compact('user'));
     }
 }
