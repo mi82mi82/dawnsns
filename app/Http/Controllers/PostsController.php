@@ -12,4 +12,11 @@ class PostsController extends Controller
         $user = auth()->user();
         return view('posts.index',compact('user'));
     }
+
+    // ログインユーザーのみが使えるようにする
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
 }

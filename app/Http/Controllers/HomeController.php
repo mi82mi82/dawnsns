@@ -25,4 +25,12 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    class PostsController extends Controller
+{
+    //ログインユーザーだけが使える
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 }

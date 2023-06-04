@@ -13,4 +13,11 @@ class UsersController extends Controller
     public function search(){
         return view('users.search');
     }
+
+    //ログインユーザーだけが使える
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
 }
