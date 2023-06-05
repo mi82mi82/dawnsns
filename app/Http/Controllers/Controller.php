@@ -10,10 +10,4 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-
-     //ログインユーザーだけが使える
-    public function __construct()
-     {
-         $this->middleware('auth');
-     }
 }
