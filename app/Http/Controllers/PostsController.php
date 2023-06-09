@@ -40,11 +40,11 @@ class PostsController extends Controller
         return redirect('/index');
     }
 
-    public function updateForm()
+    public function updateForm($id)
     {
         $post = DB::table('posts')
-            ->where('id', 1)
+            ->where('id', $id)
             ->first();
-        return view('posts.updateForm', compact('post'));
+        return view('posts.updateForm', ['post' => $post]);
     }
 }
