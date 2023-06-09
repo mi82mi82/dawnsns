@@ -25,4 +25,9 @@ class PostsController extends Controller
         $this->middleware('auth');
     }
 
+    public function createForm()
+    {
+        return view('posts.createForm');
+    }
+
 }
