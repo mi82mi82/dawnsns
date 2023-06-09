@@ -30,4 +30,21 @@ class PostsController extends Controller
         return view('posts.createForm');
     }
 
+    public function create(Request $request)
+    {
+        $post = $request->input('newPost');
+        DB::table('posts')->insert([
+            'post' => $post
+        ]);
+ 
+        return redirect('/index');
+    }
+
+    public function updateForm()
+    {
+        $post = DB::table('posts')
+            ->where('id', 1)
+            ->first();
+        return view('posts.updateForm', compact('post'));
+    }
 }
