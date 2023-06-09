@@ -20,6 +20,7 @@
 
 
 		 <tr>
+		    <!-- 制御構文 投稿リストページの中で最も重要となる投稿一覧を実装している箇所 -->
 				<td>{{ $post->id }}</td>
 				<td>{{ $post->posts }}</td>
 				<td>{{ $post->created_at }}</td>
