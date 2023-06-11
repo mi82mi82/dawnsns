@@ -47,4 +47,17 @@ class PostsController extends Controller
             ->first();
         return view('posts.updateForm', ['posts' => $post]);
     }
+
+    public function update(Request $request)
+    {
+        $id = $request->input('id');
+        $up_post = $request->input('upPost');
+        DB::table('posts')
+            ->where('id', $id)
+            ->update(
+                ['post' => $up_post]
+            );
+
+        return redirect('/index');
+    }
 }
