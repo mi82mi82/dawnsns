@@ -4,8 +4,12 @@
 <html>
 
 <h2><div class='container'>
-
-<p class="pull-right"><a class="btn btn-success" href="/post/create-form">投稿する</a></p>
+{!! Form::open(['url' => 'post/create']) !!}
+        <div class="form-group">
+            {!! Form::input('text', 'newPost', null, ['required', 'class' => 'form-control', 'placeholder' => '投稿内容']) !!}
+        </div>
+        <button type="submit" class="btn btn-success pull-right">投稿</button>
+        {!! Form::close() !!}
 
 <h2 class='page-header'>投稿一覧</h2>
 <table class='table table-hover'>
