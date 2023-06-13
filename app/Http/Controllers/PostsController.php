@@ -37,7 +37,7 @@ class PostsController extends Controller
             'post' => $post
         ]);
  
-        return redirect('/index');
+        return redirect('/top');
     }
 
     public function updateForm($id)
