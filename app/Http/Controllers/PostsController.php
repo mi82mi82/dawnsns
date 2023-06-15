@@ -34,7 +34,7 @@ class PostsController extends Controller
     {
         $post = $request->input('newPost');
         DB::table('posts')->insert([
-            'post' => $post
+            'posts' => 'newPost'
         ]);
  
         return redirect('/top');
