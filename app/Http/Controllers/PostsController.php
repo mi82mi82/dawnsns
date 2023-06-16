@@ -33,8 +33,11 @@ class PostsController extends Controller
     public function create(Request $request)
     {
         $post = $request->input('newPost');
+        // dd($post);にはhelloが入ってた
         DB::table('posts')->insert([
-            'posts' => 'newPost'
+            'posts' => $post,
+            'user_id' => Auth::id(),
+            'created_at' => now(),
         ]);
  
         return redirect('/top');
