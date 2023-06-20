@@ -28,7 +28,16 @@
 				<td>{{ $post->id }}</td>
 				<td>{{ $post->posts }}</td>
 				<td>{{ $post->created_at }}</td>
-				<td><a class="btn btn-primary" href="/post/{{ $post->id }}/update-form">更新</a></td>
+				
+				<td><a class="btn btn-primary" href="/post/{{ $post->id }}/">更新</a></td>
+				{!! Form::open(['url' => '/post/update']) !!}
+        <div class="form-group">
+            {!! Form::hidden('id', $post->id) !!}
+            {!! Form::input('text', 'upPost',$post->posts, ['required', 'class' => 'form-control']) !!}
+        </div>
+        <button type="submit" class="btn btn-success pull-right">更新</button>
+        {!! Form::close() !!}
+
 				<td><a class="btn btn-danger" href="/post/{{ $post->id }}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">削除</a></td>
 		 </tr>
 		 @endforeach
