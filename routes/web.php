@@ -23,7 +23,7 @@
 Route::get('/login', 'Auth\LoginController@login')->name('login');
 Route::post('/login', 'Auth\LoginController@login');
 
-Route::get('/register', 'Auth\RegisterController@register');
+// Route::get('/register', 'Auth\RegisterController@register');
 Route::post('/register', 'Auth\RegisterController@register');
 
 Route::get('/added', 'Auth\RegisterController@added');
@@ -32,9 +32,12 @@ Route::get('/added', 'Auth\RegisterController@added');
 //ログイン中のページ
 Route::get('/top','PostsController@index');
 Route::post('/post/create','PostsController@create');
-Route::get('post/create-form', 'PostsController@createForm');
-Route::get('post/{id}/update-form', 'PostsController@updateForm');
+// Route::get('/post/create-form', 'PostsController@createForm');
+Route::get('/post/update', 'PostsController@update');
+Route::patch('/post/update', 'PostsController@update');
 Route::get('/profile','UsersController@profile');
+
+
 
 Route::get('/search','UsersController@index');
 
