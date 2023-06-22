@@ -43,24 +43,47 @@ class PostsController extends Controller
         return redirect('/top');
     }
 
-    public function updateForm($id)
+    // public function updateForm($id)
+    // {
+    //     $post = DB::table('posts')
+    //         ->where('id', $id)
+    //         ->first();
+    //     return view( ['posts' => $post]);
+    // }
+
+    public function update(Request $request, posts $posts)
     {
-        $post = DB::table('posts')
-            ->where('id', $id)
-            ->first();
-        return view('posts.updateForm', ['posts' => $post]);
+        $inputs = $request -> validate([
+            'posts' => 'request|max:150',
+        ]);
+        $user = auth()->user();
+        $posts = DB::table('posts')
+        ->join('users','posts.user_id','=','users.id')
+        ->where('users.id',Auth::id())
+        ->select('users.images','users.username','posts.id','posts.posts','posts.created_at as created_at')
+        ->get();
+        $posts ->save();
+
+        return back() -> with('posts.update');
     }
 
-    public function update(Request $request)
+    // $id = $request->input('id');
+    // $up_post = $request->input('upPost');
+    // DB::table('posts')
+    //     ->where('user_id', $id)
+    //     ->update(
+    //         ['posts' => $up_post]
+    //     );
+
+    // return redirect('/top');
+
+
+    public function delete($id)
     {
-        $id = $request->input('id');
-        $up_post = $request->input('upPost');
         DB::table('posts')
             ->where('id', $id)
-            ->update(
-                ['post' => $up_post]
-            );
-
-        return redirect('/index');
+            ->delete();
+ 
+        return redirect('/top');
     }
 }
