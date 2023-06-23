@@ -51,20 +51,20 @@ class PostsController extends Controller
     //     return view( ['posts' => $post]);
     // }
 
-    public function update(Request $request, posts $posts)
+    public function update(Request $request)
     {
-        $inputs = $request -> validate([
-            'posts' => 'request|max:150',
+        $request -> validate([
+            'upPost' => 'required|max:150',
         ]);
-        $user = auth()->user();
-        $posts = DB::table('posts')
-        ->join('users','posts.user_id','=','users.id')
-        ->where('users.id',Auth::id())
-        ->select('users.images','users.username','posts.id','posts.posts','posts.created_at as created_at')
-        ->get();
-        $posts ->save();
 
-        return back() -> with('posts.update');
+        $posts = DB::table('posts')
+        ->where('id',$request->id)
+        ->update([
+            'posts' => $request->upPost,
+            'updated_at'=> now(),
+        ]);
+
+        return back();
     }
 
     // $id = $request->input('id');
