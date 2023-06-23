@@ -29,9 +29,10 @@
 				<td>{{ $post->posts }}</td>
 				<td>{{ $post->created_at }}</td>
 				
-				<td><a class="btn btn-primary" href="/post/{{ $post->id }}/">更新</a></td>
 				{!! Form::open(['url' => '/post/update']) !!}
-        <div class="form-group">
+				<td><a class="btn btn-primary" href="/post/{{ $post->id }}/">更新</a></td>
+				@method('patch')
+           <div class="form-group">
             {!! Form::hidden('id', $post->id) !!}
             {!! Form::input('text', 'upPost',$post->posts, ['required', 'class' => 'form-control']) !!}
         </div>
