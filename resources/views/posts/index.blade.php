@@ -34,12 +34,18 @@
 				@method('patch')
            <div class="form-group">
             {!! Form::hidden('id', $post->id) !!}
+						<!-- 上の記述 <input type="hidden" name="id" value="{{ $post->id }}"> -->
             {!! Form::input('text', 'upPost',$post->posts, ['required', 'class' => 'form-control']) !!}
+						<!-- 上の記述 <input type="text" name="upPost" value="{{ $post->posts }}" required class="form-controle"> -->
         </div>
         <button type="submit" class="btn btn-success pull-right">更新</button>
         {!! Form::close() !!}
 
-				<td><a class="btn btn-danger" href="/post/{{ $post->id }}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">削除</a></td>
+				{!! Form::open(['url' => '/post/delete']) !!}
+				<!-- {!! Form::input('text', 'delete',$post->posts, ['required', 'class' => 'form-control']) !!} -->
+				{!! Form::hidden('id', $post->id) !!}
+				<td><button type="submit" class="btn btn-success pull-right">削除</button></td>
+				{!! Form::close() !!}
 		 </tr>
 		 @endforeach
  </table>
