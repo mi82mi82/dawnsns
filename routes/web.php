@@ -30,11 +30,17 @@ Route::get('/added', 'Auth\RegisterController@added');
 
 
 //ログイン中のページ
+// 新規投稿
 Route::get('/top','PostsController@index');
 Route::post('/post/create','PostsController@create');
 // Route::get('/post/create-form', 'PostsController@createForm');
+
+// 投稿更新
 Route::get('/post/update', 'PostsController@update');
 Route::patch('/post/update', 'PostsController@update');
+
+// 投稿削除
+Route::post('/post/delete', 'PostsController@delete')->name('delete');
 Route::get('/profile','UsersController@profile');
 
 

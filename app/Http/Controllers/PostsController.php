@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class PostsController extends Controller
 {
-    //
+    //新規登録
     public function index(){
         $user = auth()->user();
         $posts = DB::table('posts')
@@ -30,6 +30,7 @@ class PostsController extends Controller
         return view('posts.createForm');
     }
 
+    // 新規投稿する
     public function create(Request $request)
     {
         $post = $request->input('newPost');
@@ -51,6 +52,7 @@ class PostsController extends Controller
     //     return view( ['posts' => $post]);
     // }
 
+    // 投稿更新
     public function update(Request $request)
     {
         $request -> validate([
@@ -67,23 +69,18 @@ class PostsController extends Controller
         return back();
     }
 
-    // $id = $request->input('id');
-    // $up_post = $request->input('upPost');
-    // DB::table('posts')
-    //     ->where('user_id', $id)
-    //     ->update(
-    //         ['posts' => $up_post]
-    //     );
 
-    // return redirect('/top');
-
-
-    public function delete($id)
+    // 削除する
+    public function delete(Request $request)
     {
-        DB::table('posts')
-            ->where('id', $id)
-            ->delete();
- 
-        return redirect('/top');
+        dd($request->id);
+        // $request -> validate([
+        //     'upPost' => 'required|max:150',
+        // ]);
+        $posts = DB::table('posts')
+        ->where('id',$request->id)
+        ->delete();
+
+        return back();
     }
 }
