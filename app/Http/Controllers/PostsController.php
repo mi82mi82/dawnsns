@@ -70,17 +70,16 @@ class PostsController extends Controller
     }
 
 
-    // 削除する
-    public function delete(Request $request)
-    {
-        dd($request->id);
-        // $request -> validate([
-        //     'upPost' => 'required|max:150',
-        // ]);
-        $posts = DB::table('posts')
-        ->where('id',$request->id)
-        ->delete();
+     // 削除する
+ public function delete(Request $request)
+ {
+     dd($request->id);
 
-        return back();
-    }
+     $posts = DB::table('posts')
+     ->where('id',$request->id)
+     ->delete();
+
+     return redirect('/top');
+     // return back();
+ }
 }
