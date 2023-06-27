@@ -28,7 +28,8 @@
 				<td>{{ $post->id }}</td>
 				<td>{{ $post->posts }}</td>
 				<td>{{ $post->created_at }}</td>
-				
+
+@if ('user_id' == $post->id)
 				{!! Form::open(['url' => '/post/update']) !!}
 				<td><a class="btn btn-primary" href="/post/{{ $post->id }}/">更新</a></td>
 				@method('patch')
@@ -49,6 +50,7 @@
 				{{ csrf_field() }}
 				{!! Form::close() !!}
 		 </tr>
+		 @endif
 		 @endforeach
  </table>
 </div></h2>
