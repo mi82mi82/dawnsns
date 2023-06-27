@@ -29,7 +29,8 @@
 				<td>{{ $post->posts }}</td>
 				<td>{{ $post->created_at }}</td>
 
-@if ('user_id' == $post->id)
+@if ('posts.user_id' == '$user = auth()->id()')
+<!-- もし、その投稿がログインしている自分のidであったら -->
 				{!! Form::open(['url' => '/post/update']) !!}
 				<td><a class="btn btn-primary" href="/post/{{ $post->id }}/">更新</a></td>
 				@method('patch')
