@@ -79,7 +79,7 @@ class PostsController extends Controller
      ->where('id',$request->id)
      ->delete();
 
-     return redirect('/top');
-     // return back();
+    //  return redirect('/post/delete');
+     return back();
  }
 }

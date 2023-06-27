@@ -40,7 +40,7 @@ Route::get('/post/update', 'PostsController@update');
 Route::patch('/post/update', 'PostsController@update');
 
 // 投稿削除
-Route::delete('/post/delete', 'postsController@delete')->name('delete');
+Route::delete('/post/delete', 'PostsController@delete')->name('delete');
 Route::get('/profile','UsersController@profile');
 
 
