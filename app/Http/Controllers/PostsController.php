@@ -73,11 +73,14 @@ class PostsController extends Controller
      // 削除する
  public function delete(Request $request)
  {
-     dd($request->id);
+    //  dd($request->id);
 
      $posts = DB::table('posts')
      ->where('id',$request->id)
      ->delete();
+
+    //  自分の投稿のみ編集と削除が可能
+    $user_id = Auth::id();
 
     //  return redirect('/post/delete');
      return back();
