@@ -42,6 +42,8 @@
         {!! Form::close() !!}
 
 				{!! Form::open(['url' => '/post/delete']) !!}
+				@method('delete')
+				{{ csrf_field() }}
 				<!-- {!! Form::input('text', 'delete',$post->posts, ['required', 'class' => 'form-control']) !!} -->
 				{!! Form::hidden('id', $post->id) !!}
 				<td><button type="submit" class="btn btn-success pull-right">削除</button></td>
