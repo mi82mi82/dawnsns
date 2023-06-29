@@ -11,7 +11,7 @@ class PostsController extends Controller
     //新規登録
     public function index(){
         $user = auth()->user();
-     // postsテーブルのuser_idがddの結果で表示されるように
+     // postsテーブルのuser_idがddの結果で表示されるようにdd($posts);で確認
         $posts = DB::table('posts')
         ->join('users','posts.user_id','=','users.id')
         ->where('users.id',Auth::id())
