@@ -11,10 +11,11 @@ class PostsController extends Controller
     //新規登録
     public function index(){
         $user = auth()->user();
+     // postsテーブルのuser_idがddの結果で表示されるように
         $posts = DB::table('posts')
         ->join('users','posts.user_id','=','users.id')
         ->where('users.id',Auth::id())
-        ->select('users.images','users.username','posts.id','posts.posts','posts.created_at as created_at')
+        ->select('users.images','users.username','posts.id','posts.posts','posts.created_at as created_at','posts.user_id')
         ->get();
         return view('posts.index',compact('user','posts'));
     }
