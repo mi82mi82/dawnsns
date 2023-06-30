@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class PostsController extends Controller
 {
-    //新規登録
+    //Topページを表示する
     public function index(){
         $user = auth()->user();
      // postsテーブルのuser_idがddの結果で表示されるようにdd($posts);で確認
@@ -16,6 +16,7 @@ class PostsController extends Controller
         ->join('users','posts.user_id','=','users.id')
         ->where('users.id',Auth::id())
         ->select('users.images','users.username','posts.id','posts.posts','posts.created_at as created_at','posts.user_id')
+        ->orderBy('created_at', 'desc') 
         ->get();
         return view('posts.index',compact('user','posts'));
     }
@@ -35,6 +36,7 @@ class PostsController extends Controller
     public function create(Request $request)
     {
         $post = $request->input('newPost');
+
         // dd($post);にはhelloが入ってた
         DB::table('posts')->insert([
             'posts' => $post,
