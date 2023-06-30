@@ -22,7 +22,7 @@
 <body>
     <header>
         <div id = "head">
-        <h1><a href="http://127.0.0.1:8001/top"><img src="images/main_logo.png"></a></h1>
+        <h1><a><img src="images/main_logo.png"></a></h1>
             <div id="">
                 <div id="">
                     <p>{{ $user->username }}<img src="images/dawn.png"></p>
