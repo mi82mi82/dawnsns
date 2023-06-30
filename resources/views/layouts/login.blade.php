@@ -21,20 +21,19 @@
 </head>
 <body>
     <header>
-     <nav class="g-navi active">
-        <div class = "container nav-wrapper">
-               <h1><a><img src="images/main_logo.png"></a></h1>
-                        <div class="menu-trigger">
-                            <p>{{ $user->username }}<img src="images/dawn.png"></p>
-                        <div>
-                          <ul>
-                              <li><a href="/top">ホーム</a></li>
-                              <li><a href="/profile">プロフィール</a></li>
-                              <li><a href="/logout">ログアウト</a></li>
-                            </ul>
-                    </div>
-             </div>
-            </nav>
+        <div id = "head">
+        <h1><a><img src="images/main_logo.png"></a></h1>
+            <div id="">
+                <div id="">
+                    <p>{{ $user->username }}<img src="images/dawn.png"></p>
+                <div>
+                <ul>
+                    <li><a href="/top">ホーム</a></li>
+                    <li><a href="/profile">プロフィール</a></li>
+                    <li><a href="/logout">ログアウト</a></li>
+                </ul>
+            </div>
+        </div>
     </header>
     <div id="row">
         <div id="container">
