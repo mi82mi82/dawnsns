@@ -20,16 +20,4 @@ class UsersController extends Controller
         $this->middleware('auth');
     }
 
-    // 削除する
-    // public function delete(Request $request)
-    // {
-    //     dd($request->id);
-        
-    //     $posts = DB::table('posts')
-    //     ->where('id',$request->id)
-    //     ->delete();
-
-    //     return redirect('/top');
-    //     // return back();
-    // }
 }
