@@ -8,7 +8,7 @@
         <div class="form-group">
             {!! Form::input('text', 'newPost', null, ['required', 'class' => 'form-control', 'placeholder' => '投稿内容']) !!}
         </div>
-        <button type="submit" class="btn btn-success pull-right">投稿</button>
+        <button type="submit" class="btn btn-success pull-right"><img src="images/post.png"></button>
         {!! Form::close() !!}
 
 <h2 class='page-header'>投稿一覧</h2>
@@ -32,7 +32,7 @@
 @if ($post-> user_id == Auth::id())
 <!-- もし、その投稿がログインしている自分のidであったら -->
 				{!! Form::open(['url' => '/post/update']) !!}
-				<td><a class="btn btn-primary" href="/post/{{ $post->id }}/">更新</a></td>
+				<td><a class="btn btn-primary" href="/post/{{ $post->id }}/"><img src="images/edit.png"></a></td>
 				@method('patch')
            <div class="form-group">
             {!! Form::hidden('id', $post->id) !!}
@@ -46,7 +46,7 @@
 				{!! Form::open(['url' => '/post/delete']) !!}
 				<!-- {!! Form::input('text', 'delete',$post->posts, ['required', 'class' => 'form-control']) !!} -->
 				{!! Form::hidden('id', $post->id) !!}
-				<td><button type="submit" class="btn btn-success pull-right">削除</button></td>
+				<td><a class="btn btn-danger" href="/post/{{ $post->id }}/delete" onclick="return confirm('こちらのつぶやきを削除します。よろしいでしょうか？')"><img src="images/trash_h.png"></a></td>
 				@method('delete')
 				{{ csrf_field() }}
 				{!! Form::close() !!}
@@ -58,3 +58,4 @@
 </html>
 
 @endsection
+
