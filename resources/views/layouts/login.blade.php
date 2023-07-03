@@ -24,7 +24,7 @@
         <nav class="nav-menu">
             <div class = "container nav-wrapper">
                <h1><a><img src="images/main_logo.png"></a></h1>
-                        <div class="menu-trigger">
+                        <div class="imgbox">
                             <p>{{ $user->username }}<img src="images/dawn.png"></p>
                         <div>
                           <ul class="menu-list">

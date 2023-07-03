@@ -28,6 +28,14 @@ topのプルダウンメニュー作成
     display: flex;
 }
 
+/* .li a {
+    text-align: right;
+  }
+
+  img {
+    text-align: right;
+    display: block;
+  } */
 
 .menu-list {
     position: absolute;
@@ -35,6 +43,18 @@ topのプルダウンメニュー作成
     top: 2.5em;
     width: 100%;
   }
+
+  /* .imgbox {
+    display: flex;
+    justify-content: flex-end;
+   }
+   img {
+    width: 100%;
+    height: 100%;
+    max-width: 200px;
+   } */
+
+
 
 
 
