@@ -88,4 +88,14 @@ class PostsController extends Controller
     //  return redirect('/post/delete');
      return back();
  }
+
+//  プルダウンメニュー作成
+ public function up()
+    {
+        Schema::create('categories', function (Blueprint $table) {
+            $table->id('category_id');
+            $table->string('category_name', 255);
+            $table->timestamps();
+        });
+    }
 }

@@ -21,19 +21,19 @@
 </head>
 <body>
     <header>
-        <div id = "head">
-        <h1><a><img src="images/main_logo.png"></a></h1>
-            <div id="">
-                <div id="">
-                    <p>{{ $user->username }}<img src="images/dawn.png"></p>
-                <div>
-                <ul>
-                    <li><a href="/top">ホーム</a></li>
-                    <li><a href="/profile">プロフィール</a></li>
-                    <li><a href="/logout">ログアウト</a></li>
-                </ul>
-            </div>
-        </div>
+        <nav class="nav-menu">
+            <div class = "container nav-wrapper">
+               <h1><a><img src="images/main_logo.png"></a></h1>
+                        <div class="menu-trigger">
+                            <p>{{ $user->username }}<img src="images/dawn.png"></p>
+                        <div>
+                          <ul class="menu-list">
+                              <li class="menu-item"><a href="/top">ホーム</a></li>
+                              <li class="menu-item"><a href="/profile">プロフィール</a></li>
+                              <li class="menu-item"><a href="/logout">ログアウト</a></li>
+                          </ul>
+           </div>
+        </nav>
     </header>
     <div id="row">
         <div id="container">
@@ -58,7 +58,7 @@
     </div>
     <footer>
     </footer>
-    <script src="JavaScriptファイルのURL"></script>
-    <script src="JavaScriptファイルのURL"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
