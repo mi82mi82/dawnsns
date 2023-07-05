@@ -48,11 +48,15 @@ topのプルダウンメニュー作成
     display: none;
   }
 
-.menu-list a:hover {
-    position: absolute;
-    left: 0;
-    top: 0.9em;
-  }
+      /* 2枚目の画像は最初透明 */
+      .menu-list a:last-of-type {
+        opacity: 0;
+        transition: opacity .7s;
+      }
+      /* hoverすると2枚目の画像が透明じゃなくなる */
+      .menu-list a:hover img {
+        opacity: red;
+      }
 
 .menu-item {
     border: #3C4767 1px solid;
