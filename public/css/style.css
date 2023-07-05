@@ -44,8 +44,14 @@ topのプルダウンメニュー作成
 .menu-list {
     position: absolute;
     left: 0;
-    top: 2.5em;
+    top: 0.9em;
     display: none;
+  }
+
+.menu-list a:hover {
+    position: absolute;
+    left: 0;
+    top: 0.9em;
   }
 
 .menu-item {
@@ -85,6 +91,6 @@ topのプルダウンメニュー作成
     display: none;
    }
 
-   . btn btn-success pull-right{
+   .btn btn-success pull-right{
     display: none;
    }
