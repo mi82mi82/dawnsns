@@ -26,8 +26,40 @@ topのプルダウンメニュー作成
 */
 .nav-wrapper {
     display: flex;
+    align-items: center;
 }
 
+.nav-wrapper h1 {
+    flex-basis: 80%;
+}
+
+.imgbox {
+    flex-basis: 20%;
+}
+
+.neko {
+    position: relative;
+}
+
+.menu-list {
+    position: absolute;
+    left: 0;
+    top: 2.5em;
+    display: none;
+  }
+
+.menu-item {
+    border: #3C4767 1px solid;
+    text-align: center;
+}
+
+.menu-item a {
+    padding: 16px 32px;
+    background-color: white;
+    color: black;
+    z-index: 10;
+    display: block;
+}
 /* .li a {
     text-align: right;
   }
@@ -37,12 +69,7 @@ topのプルダウンメニュー作成
     display: block;
   } */
 
-.menu-list {
-    position: absolute;
-    left: 0;
-    top: 2.5em;
-    width: 100%;
-  }
+
 
   /* .imgbox {
     display: flex;
@@ -54,7 +81,10 @@ topのプルダウンメニュー作成
     max-width: 200px;
    } */
 
+   .form-group {
+    display: none;
+   }
 
-
-
-
+   . btn btn-success pull-right{
+    display: none;
+   }

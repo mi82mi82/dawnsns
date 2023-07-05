@@ -23,16 +23,16 @@
     <header>
         <nav class="nav-menu">
             <div class = "container nav-wrapper">
-               <h1><a><img src="images/main_logo.png"></a></h1>
+               <h1><a href="http://127.0.0.1:8000/top"><img src="images/main_logo.png"></a></h1>
                         <div class="imgbox">
                             <p>{{ $user->username }}<img src="images/dawn.png"></p>
-                        <div>
+                        <div class="neko">
                           <ul class="menu-list">
                               <li class="menu-item"><a href="/top">ホーム</a></li>
                               <li class="menu-item"><a href="/profile">プロフィール</a></li>
                               <li class="menu-item"><a href="/logout">ログアウト</a></li>
                           </ul>
-           </div>
+                        </div>
         </nav>
     </header>
     <div id="row">
@@ -59,6 +59,6 @@
     <footer>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>
