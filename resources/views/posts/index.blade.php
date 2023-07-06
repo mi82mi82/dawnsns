@@ -39,9 +39,9 @@
 						<!-- 上の記述 <input type="hidden" name="id" value="{{ $post->id }}"> -->
             {!! Form::input('text', 'upPost',$post->posts, ['required', 'class' => 'form-control']) !!}
 						<!-- 上の記述 <input type="text" name="upPost" value="{{ $post->posts }}" required class="form-controle"> -->
-        </div>
-        <button type="submit" class="btn btn-success pull-right">更新</button>
-        {!! Form::close() !!}
+						<button type="submit" class="btn btn-success pull-right">更新</button>
+						{!! Form::close() !!}
+					 </div>
 
 				{!! Form::open(['url' => '/post/delete']) !!}
 				<!-- {!! Form::input('text', 'delete',$post->posts, ['required', 'class' => 'form-control']) !!} -->
