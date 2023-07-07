@@ -26,7 +26,7 @@
                <h1><a href="http://127.0.0.1:8000/top"><img src="images/main_logo.png"></a></h1>
                         <div class="imgbox">
                             <p>{{ $user->username }}
-                              <span class=”Arrow-Top”></span><img src="images/dawn.png">
+                              <span class="Arrow-Top"></span><img src="images/dawn.png">
                             </p>
                         <div class="neko">
                           <ul class="menu-list">
