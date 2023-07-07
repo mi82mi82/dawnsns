@@ -27,6 +27,7 @@ topのプルダウンメニュー作成
 .nav-wrapper {
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .nav-wrapper h1 {
@@ -35,6 +36,19 @@ topのプルダウンメニュー作成
 
 .imgbox {
     flex-basis: 20%;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+}
+
+.imgbox img {
+    width: 50%;
+    border-radius: 100px;
+    margin-bottom: 100px;
+}
+
+.imgbox p {
+    display: flex;
 }
 
 .neko {
@@ -64,29 +78,20 @@ topのプルダウンメニュー作成
     z-index: 10;
     display: block;
 }
-/* .li a {
-    text-align: right;
-  }
-
-  img {
-    text-align: right;
-    display: block;
-  } */
-
-
-
-  /* .imgbox {
-    display: flex;
-    justify-content: flex-end;
-   }
-   img {
-    width: 100%;
-    height: 100%;
-    max-width: 200px;
-   } */
 
    .form-group {
     display: none;
    }
 
-  
+   /*
+   くの字ボタン
+   */
+   .Arrow-Top {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-left: black 1px solid;
+    border-bottom: black 1px solid;
+    transform: rotate(316deg);
+    margin: 0 8px;
+}
