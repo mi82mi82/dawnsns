@@ -100,7 +100,7 @@ topのプルダウンメニュー作成
 }
 
 .posts-list{
-    border-bottom:#6C6C6C;
+    border-bottom:solid 0.6px #6C6C6C;
 }
 
 .table table-hover{
