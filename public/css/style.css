@@ -37,12 +37,13 @@ topのプルダウンメニュー作成
 .imgbox {
     flex-basis: 20%;
     position: absolute;
-    top: 50px;
-    right: 10px;
+    top: 30px;
+    right: 30px;
 }
 
+/* プロフィール写真丸み */
 .imgbox img {
-    width: 50%;
+    width: 25%;
     border-radius: 100px;
     margin-bottom: 100px;
 }
@@ -55,10 +56,11 @@ topのプルダウンメニュー作成
     position: relative;
 }
 
+/* ここ */
 .menu-list {
     position: absolute;
-    left: 0;
-    top: 1.4em;
+    right: 0;
+    top: 4.5em;
     display: none;
   }
 
@@ -95,3 +97,9 @@ topのプルダウンメニュー作成
     transform: rotate(316deg);
     margin: 0 8px;
 }
+
+/* 投稿リストの枠 */
+/* .btn-primary {
+    border: #3C4767 1px solid;
+    text-align: center;
+} */
