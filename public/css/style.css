@@ -103,6 +103,17 @@ topのプルダウンメニュー作成
     border-bottom:solid 0.6px #6C6C6C;
 }
 
-.table table-hover{
+.table{
     width: 100%
 }
+
+.btn-primary img{
+    width: 25px;
+    height: 25px;
+}
+
+.btn-danger img{
+    width: 25px;
+    height: 25px;
+}
+
