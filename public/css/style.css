@@ -87,8 +87,7 @@ topのプルダウンメニュー作成
    }
 
    /*
-   くの字ボタン
-   */
+   くの字ボタン、ヘッターのプルダウンメニュー */
    .Arrow-Top {
     display: inline-block;
     width: 16px;
@@ -99,19 +98,24 @@ topのプルダウンメニュー作成
     margin: 0 8px;
 }
 
+/* 投稿一覧の下線 */
 .posts-list{
     border-bottom:solid 0.6px #6C6C6C;
+    height: 54px;
 }
 
+/* 投稿ページ左側表示 */
 .table{
     width: 100%
 }
 
+/* 投稿更新ボタン */
 .btn-primary img{
     width: 25px;
     height: 25px;
 }
 
+/* 投稿削除ボタン */
 .btn-danger img{
     width: 25px;
     height: 25px;
