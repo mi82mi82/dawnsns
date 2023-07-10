@@ -98,10 +98,36 @@ topのプルダウンメニュー作成
     margin: 0 8px;
 }
 
-/* 投稿一覧の下線 */
+/* 投稿一覧の下線、幅、文字カラー*/
 .posts-list{
     border-bottom:solid 0.6px #6C6C6C;
-    height: 54px;
+    height: 80px;
+    color:rgb(101, 97, 97);
+}
+
+/* 投稿者名前 配置 */
+.posts-name{
+    vertical-align: top;
+}
+/* 投稿内容 配置*/
+.posts-post{
+    vertical-align: top;
+    font-size: 18px;
+}
+/* 投稿日時 配置*/
+.posts-created_at{
+    text-align: right;
+    vertical-align: top;
+    font-size: 12px;
+}
+
+.tdtd{
+    text-align: right;
+    vertical-align: bottom;
+}
+.tdtdtd{
+    text-align: center;
+    vertical-align: bottom;
 }
 
 /* 投稿ページ左側表示 */

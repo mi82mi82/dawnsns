@@ -25,14 +25,14 @@
 
 		 <tr class="posts-list">
 		    <!-- 制御構文 投稿リストページの中で最も重要となる投稿一覧を実装している箇所 -->
-				<td>{{ $post->id }}</td>
-				<td>{{ $post->posts }}</td>
-				<td>{{ $post->created_at }}</td>
+				<td class="posts-name">{{ $post->id }}</td>
+				<td class="posts-post">{{ $post->posts }}</td>
+				<td class="posts-created_at">{{ $post->created_at }}</td>
 
 @if ($post-> user_id == Auth::id())
 <!-- もし、その投稿がログインしている自分のidであったら -->
 				{!! Form::open(['url' => '/post/update']) !!}
-				<td><a class="btn btn-primary" href="/post/{{ $post->id }}/"><img src="images/edit.png"></a></td>
+				<td class="tdtd"><a class="btn btn-primary" href="/post/{{ $post->id }}/"><img src="images/edit.png"></a></td>
 				@method('patch')
            <div class="form-group">
             {!! Form::hidden('id', $post->id) !!}
@@ -46,7 +46,7 @@
 				{!! Form::open(['url' => '/post/delete']) !!}
 				<!-- {!! Form::input('text', 'delete',$post->posts, ['required', 'class' => 'form-control']) !!} -->
 				{!! Form::hidden('id', $post->id) !!}
-				<td><a class="btn btn-danger" href="/post/{{ $post->id }}/delete" onclick="return confirm('こちらのつぶやきを削除します。よろしいでしょうか？')"><img src="images/trash_h.png"></a></td>
+				<td class="tdtdtd"><a class="btn btn-danger" href="/post/{{ $post->id }}/delete" onclick="return confirm('こちらのつぶやきを削除します。よろしいでしょうか？')"><img src="images/trash_h.png"></a></td>
 				@method('delete')
 				{{ csrf_field() }}
 				{!! Form::close() !!}
