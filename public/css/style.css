@@ -36,6 +36,7 @@ topのプルダウンメニュー作成
 
 .imgbox {
     flex-basis: 20%;
+    /* 要素の絶対配置を指定することができる */
     position: absolute;
     top: 30px;
     right: 30px;
@@ -60,7 +61,7 @@ topのプルダウンメニュー作成
 .menu-list {
     position: absolute;
     right: 0;
-    top: 4.5em;
+    top: -4.5em;
     display: none;
   }
 
@@ -74,7 +75,7 @@ topのプルダウンメニュー作成
 }
 
 .menu-item a {
-    padding: 16px 32px;
+    padding: 32px 42px;
     background-color: white;
     color: black;
     z-index: 10;
@@ -98,8 +99,10 @@ topのプルダウンメニュー作成
     margin: 0 8px;
 }
 
-/* 投稿リストの枠 */
-/* .btn-primary {
-    border: #3C4767 1px solid;
-    text-align: center;
-} */
+.posts-list{
+    border-bottom:#6C6C6C;
+}
+
+.table table-hover{
+    width: 100%
+}
