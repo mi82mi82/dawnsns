@@ -57,7 +57,6 @@ topのプルダウンメニュー作成
     position: relative;
 }
 
-/* ここ */
 .menu-list {
     position: absolute;
     right: 0;
@@ -82,6 +81,7 @@ topのプルダウンメニュー作成
     display: block;
 }
 
+/* 投稿更新フォーム */
    .form-group {
     display: none;
    }
@@ -97,6 +97,13 @@ topのプルダウンメニュー作成
     transform: rotate(316deg);
     margin: 0 8px;
 }
+
+
+.form-control{
+    width: 1150px;
+    height: 80px;
+}
+
 
 /* 投稿一覧の下線、幅、文字カラー*/
 .posts-list{

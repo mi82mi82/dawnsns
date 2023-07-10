@@ -5,7 +5,7 @@
 
 <h2><div class='container'>
 {!! Form::open(['url' => 'post/create']) !!}
-        <div class="form-group">
+        <div class="form-groupup">
             {!! Form::input('text', 'newPost', null, ['required', 'class' => 'form-control', 'placeholder' => '投稿内容']) !!}
         </div>
         <button type="submit" class="btn btn-success pull-right"><img src="images/post.png"></button>
