@@ -14,18 +14,17 @@
 <h2 class='page-header'>投稿一覧</h2>
 <table class='table table-hover'>
 		 <tr>
-				<th>投稿No</th>
+				<th>投稿者アイコン</th>
+				<th>投稿者名</th>
 				<th>投稿内容</th>
 				<th>投稿日時</th>
-				<th></th>
-				<th></th>
 		 </tr>
 		 @foreach ($posts as $post)
 
 
 		 <tr class="posts-list">
 		    <!-- 制御構文 投稿リストページの中で最も重要となる投稿一覧を実装している箇所 -->
-				<td class="posts-name">{{ $post->id }}</td>
+				<td class="posts-name"><img src="/users/{{ $user->images }}/">{{ $post->id }}</td>
 				<td class="posts-post">{{ $post->posts }}</td>
 				<td class="posts-created_at">{{ $post->created_at }}</td>
 
