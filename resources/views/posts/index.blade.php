@@ -6,9 +6,9 @@
 <h2><div class='container'>
 {!! Form::open(['url' => 'post/create']) !!}
         <div class="form-groupup">
-            {!! Form::input('text', 'newPost', null, ['required', 'class' => 'form-control', 'placeholder' => '投稿内容']) !!}
+            {!! Form::input('text', 'newPost', null, ['required', 'class' => 'form-control', 'placeholder' => 'なにをつぶやこうか...？']) !!}
+						<button type="submit" class="btn btn-success pull-right"><img src="images/post.png"></button>
         </div>
-        <button type="submit" class="btn btn-success pull-right"><img src="images/post.png"></button>
         {!! Form::close() !!}
 
 <h2 class='page-header'>投稿一覧</h2>

@@ -98,11 +98,23 @@ topのプルダウンメニュー作成
     margin: 0 8px;
 }
 
-
+/* 新規投稿フォーム */
 .form-control{
     width: 1150px;
     height: 80px;
 }
+
+/* 新規投稿不フォームのボタン */
+.btn-success img{
+    width: 25px;
+    height: 25px;
+    text-align:center;
+}
+
+/* .placeholder{
+    vertical-align: top;
+    text-align: left;
+} */
 
 
 /* 投稿一覧の下線、幅、文字カラー*/
