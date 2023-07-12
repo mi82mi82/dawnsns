@@ -4,7 +4,7 @@
 <html>
 
 <h2><div class='container'>
-{!! Form::open(['url' => 'post/create']) !!}
+{!! Form::open(['class' => 'pan'],['url' => 'post/create']) !!}
         <div class="form-groupup">
             {!! Form::input('text', 'newPost', null, ['required', 'class' => 'form-control', 'placeholder' => 'なにをつぶやこうか...？']) !!}
 						<button type="submit" class="btn btn-success pull-right"><img src="images/post.png"></button>

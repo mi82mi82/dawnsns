@@ -100,8 +100,14 @@ topのプルダウンメニュー作成
 
 /* 新規投稿フォーム */
 .form-control{
-    width: 1150px;
+    width: 780px;
     height: 80px;
+    border: none;
+}
+
+.pan{
+    border-bottom:solid 4.2px#e2e0e0;
+    color:rgb(101, 97, 97);
 }
 
 /* 新規投稿の送信ボタン */
