@@ -105,6 +105,7 @@ topのプルダウンメニュー作成
     border: none;
 }
 
+/* 新規投稿下線 */
 .pan{
     border-bottom:solid 4.2px#e2e0e0;
     color:rgb(101, 97, 97);
