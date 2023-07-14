@@ -24,7 +24,7 @@
 
 		 <tr class="posts-list">
 		    <!-- 制御構文 投稿リストページの中で最も重要となる投稿一覧を実装している箇所 -->
-				<td class="posts-name"><img src=<img src="/images/{{ $post->images }}">{{ $post->id }}</td>
+				<td class="posts-name"><img src="/images/{{ $post->images }}">{{ $post->id }}</td>
 				<td class="posts-post">{{ $post->posts }}</td>
 				<td class="posts-created_at">{{ $post->created_at }}</td>
 
