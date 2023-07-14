@@ -26,4 +26,24 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function follow($user_id)
+    {
+        return $this->follows()->attach($user_id);
+    }
+
+    public function unfollow($user_id)
+    {
+        return $this->follows()->detach($user_id);
+    }
+
+    public function isFollowing($user_id)
+    {
+        return (boolean) $this->follows()->where('followed_id', $user_id)->exists();
+    }
+
+    public function isFollowed($user_id)
+    {
+        return (boolean) $this->followers()->where('following_id', $user_id)->exists();
+    }
 }

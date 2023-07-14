@@ -47,6 +47,10 @@ Route::get('/profile','UsersController@profile');
 
 Route::get('/search','UsersController@index');
 
+// ログインしているユーザーのフォローしているユーザー数、フォローされているユーザー数（count使って取得）
+Route::group(['middleware' => 'auth'], function() {
+Route::get('/show','FollowsController@show');
+});
 Route::get('/follow-list','PostsController@index');
 Route::get('/follower-list','PostsController@index');
 
