@@ -47,7 +47,6 @@
                 <div>
                 <p>フォロー数</p>
                 <p>〇〇名</p>
-                <!-- {{ $follow_count }} -->
                 </div>
                 <p class="btn"><a href="">フォローリスト</a></p>
                 <div>
