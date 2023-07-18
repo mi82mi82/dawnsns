@@ -35,5 +35,11 @@ class FollowsController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+
+        // フォロー数とフォロワー数取得
+        $users = DB::table('follows')->count([
+            'follow' => Auth::id(),
+        ]);
+    }
     }
 }

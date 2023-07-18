@@ -17,7 +17,7 @@ class CreateFollowsTable extends Migration
             $table->increments('id')->autoIncrement();
             $table->integer('follow');
             $table->integer('follower');
-            $table->timestamp('created_at')
+            // $table->timestamp('created_at')
             ->useCurrent();
 
             $table->index('following_id');
