@@ -45,12 +45,12 @@
             <div id="confirm">
                 <p>{{ $user->username }}さんの</p>
                 <div>
-                <p>フォロー数</p>
+                <p>フォロー数following</p>
                 <p>〇〇名</p>
                 </div>
                 <p class="btn"><a href="">フォローリスト</a></p>
                 <div>
-                <p>フォロワー数</p>
+                <p>フォロワー数followers</p>
                 <p>〇〇名</p>
                 </div>
                 <p class="btn"><a href="">フォロワーリスト</a></p>
