@@ -14,6 +14,16 @@
 <img src="images/{{$getUser->images}}">
 {{$getUser->username}}
 </div>
+<form action="/follow/create" method="post">
+        @csrf
+        <input type="hidden" name="id" value="{{$getUser->id}}">
+        <input type="submit" value="フォローする">
+</form>
+<form action="/follow/delete" method="post">
+        @csrf
+        <input type="hidden" name="id" value="{{$getUser->id}}">
+        <input type="submit" value="フォロー外す">
+</form>
 @endforeach
 
 @endsection
