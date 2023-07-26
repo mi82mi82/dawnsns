@@ -53,6 +53,8 @@ Route::get('/show','FollowsController@index');
 });
 Route::get('/follow-list','PostsController@index');
 Route::get('/follower-list','PostsController@index');
+Route::post('/follow/create','FollowsController@create');
+Route::post('/follow/delete','FollowsController@delete');
 
 
 
