@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
@@ -14,6 +15,10 @@ class UsersController extends Controller
     public function search(){
         $user=auth()->user();
         $getUsers= DB::table('users')->get();
+        $User = DB::table('follows')
+            ->where('follower',Auth::id())
+            ->pluck('follow');
+        dd($User);
         return view('users.search',compact('user','getUsers'));
     }
 
