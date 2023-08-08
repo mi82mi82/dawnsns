@@ -82,9 +82,9 @@ topのプルダウンメニュー作成
 }
 
 /* 投稿更新フォーム */
-   .form-group {
+   /* .form-group {
     display: none;
-   }
+   } */
 
    /*
    くの字ボタン、ヘッターのプルダウンメニュー */
@@ -171,5 +171,9 @@ topのプルダウンメニュー作成
 .btn-danger img{
     width: 25px;
     height: 25px;
+}
+
+.edit-content{
+    display: none;
 }
 

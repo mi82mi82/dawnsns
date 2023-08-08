@@ -33,6 +33,7 @@ class FollowsController extends Controller
 
     public function create(Request $request){
         $id=$request->id;
+        
         DB::table('follows')
         ->insert([
             'follow' => $id,
