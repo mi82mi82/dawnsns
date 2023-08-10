@@ -16,6 +16,9 @@
 </div>
 <!-- もし、〇〇が自分でなかったら -->
 @if($getUser->id != Auth::id())
+<!-- @foreach ($user as $getUsers)
+        <p> {{ $User }}</p>
+    @endforeach -->
 <form action="/follow/create" method="post">
         @csrf
         <input type="hidden" name="id" value="{{$getUser->id}}">
