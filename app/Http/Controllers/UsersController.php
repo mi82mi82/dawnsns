@@ -12,14 +12,15 @@ class UsersController extends Controller
     public function profile(){
         return view('users.profile');
     }
+
     public function search(){
         $user=auth()->user();
         $getUsers= DB::table('users')->get();
         $User = DB::table('follows')
             ->where('follower',Auth::id())
             ->pluck('follow');
-        dd($User);
-        return view('users.search',compact('user','getUsers'));
+        // dd($User);
+        return view('users.search',compact('user','getUsers','User'));
     }
 
     //ログインユーザーだけが使える
