@@ -44,7 +44,7 @@ Route::delete('/post/delete', 'PostsController@delete')->name('delete');
 Route::get('/profile','UsersController@profile');
 
 
-
+// フォローフォロワー機能
 Route::get('/search','UsersController@search');
 
 // ログインしているユーザーのフォローしているユーザー数、フォローされているユーザー数（count使って取得）
