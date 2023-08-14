@@ -16,11 +16,11 @@ class UsersController extends Controller
     public function search(){
         $user=auth()->user();
         $getUsers= DB::table('users')->get();
-        $User = DB::table('follows')
+        $followings= DB::table('follows')
             ->where('follower',Auth::id())
             ->pluck('follow');
-        // dd($getUsers);
-        return view('users.search',compact('user','getUsers','User'));
+        // dd($User);
+        return view('users.search',compact('user','getUsers','followings'));
     }
 
     //ログインユーザーだけが使える
