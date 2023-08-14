@@ -19,7 +19,7 @@ class UsersController extends Controller
         $User = DB::table('follows')
             ->where('follower',Auth::id())
             ->pluck('follow');
-        // dd($User);
+        // dd($getUsers);
         return view('users.search',compact('user','getUsers','User'));
     }
 
