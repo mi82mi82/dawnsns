@@ -16,11 +16,11 @@
 </div>
 <!-- もし、〇〇が自分でなかったら -->
 @if($getUser->id != Auth::id())
+@if($followings->contains($getUser->id))
 <form action="/follow/create" method="post">
         @csrf
         <input type="hidden" name="id" value="{{$getUser->id}}">
         <input type="submit" value="フォローする">
-        $User->contains('follow',$getUser->id)
 </form>
 
 @else
@@ -29,6 +29,7 @@
         <input type="hidden" name="id" value="{{$getUser->id}}">
         <input type="submit" value="フォロー外す">
 </form>
+@endif
 @endif
 @endforeach
 
