@@ -56,5 +56,7 @@ Route::get('/follower-list','PostsController@index');
 Route::post('/follow/create','FollowsController@create');
 Route::post('/follow/delete','FollowsController@delete');
 
+// マイプロフィール機能
+Route::get('/search','UsersController@profile');
 
 
