@@ -8,8 +8,6 @@
 
 	<div class="books-list__title mypage-color">
 
-	マイページトップ
-
 	</div>
 
 	<div class="book-table">
@@ -59,7 +57,7 @@
 
 	<div class="profile-group__title">ユーザーアイコン</div>
 
-	<div class="profile-group__element">{{$Auth->Iconimage}}</div>
+	<div class="profile-group__element">{{$user->Iconimage}}</div>
 
 	</div>
 

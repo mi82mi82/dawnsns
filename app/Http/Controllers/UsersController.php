@@ -10,7 +10,9 @@ class UsersController extends Controller
 {
     //
     public function profile(){
-        return view('users.profile');
+        $user=auth()->user();
+        // dd($user);
+        return view('users.profile',compact('user'));
     }
 
     public function search(){
