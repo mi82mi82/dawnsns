@@ -2,71 +2,37 @@
 
 @section('content')
 {!! Form::open(['class' => ''],['url' => '/search']) !!}
-	<div class="index-content">
-
-	<div class="books-list">
-
-	<div class="books-list__title mypage-color">
-
-	</div>
-
-	<div class="book-table">
-
-	<div class="book-table__profile-list">
-
-	<div class="profile-group">
-
-	<div class="profile-group__title">ユーザー名</div>
-
-	<div class="profile-group__element">{{$user->id}}</div>
-
-	</div>
-
-	<div class="profile-group">
-
-	<div class="profile-group__title">メールアドレス</div>
-
-	<div class="profile-group__element">{{$user->email}}</div>
-
-	</div>
-
-	<div class="profile-group">
-
-	<div class="profile-group__title">既存パスワード</div>
-
-	<div class="profile-group__element">{{$user->password}}</div>
-
-	</div>
-	<div class="profile-group">
-
-	<div class="profile-group__title">新しいパスワード</div>
-
-	<div class="profile-group__element">{{$user->newpassword}}</div>
-
-	</div>
-
-	<div class="profile-group">
-
-	<div class="profile-group__title">自己紹介文</div>
-
-	<div class="profile-group__element">{{$user->bio}}</div>
-
-	</div>
-
-	<div class="profile-group">
-
-	<div class="profile-group__title">ユーザーアイコン</div>
-
-	<div class="profile-group__element">{{$user->Iconimage}}</div>
-
-	</div>
-
-	</div>
-
-	</div>
-
-	</div>
-
-	</div>
+<section id="contact">
+    <div class="container">
+      <div class="title">
+        <h2></h2>
+        <p class="ja-title"></p>
+      </div>
+      <form action="index.php" method="post">
+        <div class="ct-block">
+          <label class="contact-text" for="name">UserName</label>
+          <input type="text" name="yourname" placeholder="Dawntown" class="form-name">
+        </div>
+        <div class="ct-block">
+          <label class="contact-text" for="email">MailAdress</label>
+          <input type="text" name="mail" placeholder="dawn@dawn.jp" class="form-mail">
+        </div>
+        <div class="ct-block">
+				<label class="contact-text" for="email">Password</label>
+          <input type="text" name="mail" placeholder="" class="form-mail">
+        </div>
+				<label class="contact-text" for="email">new Password</label>
+          <input type="text" name="mail" placeholder="" class="form-mail">
+        </div>
+        <div class="ct-block">
+          <label for="request-about" class="contact-text">Bio</label>
+          <textarea name="request-about" id="request-about" cols="60" rows="6" placeholder="自己紹介文（任意）"></textarea>
+        </div>
+        <div class="ct-block">
+          <input class="send-button" type="submit" value="更新">
+        </div>
+      </form>
+    </div>
+  </section>
 
 @endsection
