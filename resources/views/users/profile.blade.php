@@ -10,8 +10,9 @@
       </div>
       <form action="index.php" method="post">
         <div class="ct-block">
+					<img src="images/{{$getUser->images}}">
           <label class="contact-text" for="name">UserName</label>
-          <input type="text" name="yourname" placeholder="Dawntown" class="form-name">
+          <input type="text" name="Username" placeholder="Dawntown" class="form-name">
         </div>
         <div class="ct-block">
           <label class="contact-text" for="email">MailAdress</label>
