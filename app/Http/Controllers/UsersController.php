@@ -11,9 +11,9 @@ class UsersController extends Controller
     //
     public function profile(){
         $user=auth()->user();
-        $getUsers= DB::table('users')->get();
+        // $posts = DB::table('posts')
         // dd($getUsers);
-        return view('users.profile',compact('user','getUsers'));
+        return view('users.profile',compact('user'));
     }
 
     public function search(){

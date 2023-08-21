@@ -10,7 +10,7 @@
       </div>
       <form action="index.php" method="post">
         <div class="ct-block">
-					<img src="images/{{$getUser->images}}">
+					<!-- <img src="images/{{$posts->images}}"> -->
           <label class="contact-text" for="name">UserName</label>
           <input type="text" name="Username" placeholder="Dawntown" class="form-name">
         </div>
