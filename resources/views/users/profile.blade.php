@@ -29,7 +29,7 @@
           <label for="request-about" class="contact-text">Bio</label>
           <textarea name="request-about" id="request-about" cols="60" rows="6" placeholder="自己紹介文（任意）"></textarea>
         </div>
-        <!-- <div class="ct-block">
+        <div class="ct-block">
           <label for="request-about" class="contact-text">Iconimage</label>
           <textarea name="request-about" id="request-about" cols="60" rows="6">
           </textarea>
@@ -37,7 +37,7 @@
             @csrf
              <input type="file" name="image">
           </form>
-        </div> -->
+        </div>
         <div class="ct-block">
           <input class="send-button" type="submit" value="更新">
         </div>
