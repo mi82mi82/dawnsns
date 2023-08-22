@@ -10,7 +10,7 @@
       </div>
       <form action="index.php" method="post">
         <div class="ct-block">
-          <img src="/images/{{ $post->images }}">
+          <img src="/images/{{ $userimage }}">
           <label class="contact-text" for="name">UserName</label>
           <input type="text" name="Username" placeholder="Dawntown" class="form-name">
         </div>
@@ -29,6 +29,15 @@
           <label for="request-about" class="contact-text">Bio</label>
           <textarea name="request-about" id="request-about" cols="60" rows="6" placeholder="自己紹介文（任意）"></textarea>
         </div>
+        <!-- <div class="ct-block">
+          <label for="request-about" class="contact-text">Iconimage</label>
+          <textarea name="request-about" id="request-about" cols="60" rows="6">
+          </textarea>
+          <form method="POST" action="/upload" enctype="multipart/form-data">
+            @csrf
+             <input type="file" name="image">
+          </form>
+        </div> -->
         <div class="ct-block">
           <input class="send-button" type="submit" value="更新">
         </div>
