@@ -58,6 +58,8 @@ Route::post('/follow/delete','FollowsController@delete');
 
 // マイプロフィール機能
 Route::get('/search','UsersController@profile');
+Route::get('/upload','UsersController@upload');
 // Route::get('/search', 'UserController@profile')->name('user.index');
+
 
 
