@@ -35,19 +35,27 @@ class UsersController extends Controller
     // ログインユーザーのプロフィール画像
     public function upload(Request $request)
     {
-                // sampleディレクトリに画像を保存
-                $request->file('image');
+        // ディレクトリ名
+        $dir = 'sample';
 
-                // 取得したファイル名で保存
-                $request->file('image');
+        // usersテーブルのimagesカラムに画像を保存
+        $request->file('image')->DB::table('users');
 
-                // ファイル情報をDBに保存
-                $image = new Image();
-                $image->name = $file_name;
-                $image->path = 'storage/' . $dir . '/' . $file_name;
-                $image->save();
+        // アップロードされたファイル名を取得
+        $file_name = $request->file('image')->getClientOriginalName();
 
-                dd($request->file('image'));
-        
+
+        // 取得したファイル名で保存
+        $request->file('image');
+
+        // ファイル情報をDBに保存
+        $image = new Image();
+        $image->name = $file_name;
+        $image->path = 'storage/' . $dir . '/upload' . $file_name;
+        $image->save();
+
+        // dd($request->file('image'));
+        return redirect('/upload');
+
     }
 }

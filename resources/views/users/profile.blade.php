@@ -2,7 +2,8 @@
 
 @section('content')
 
-          <form method="POST" action="/upload" enctype="multipart/form-data">
+  @csrf
+        <form method="POST" action="/upload" enctype="multipart/form-data">
           <div class="ct-block">
             <img src="/images/{{ $userimage }}">
             <label class="contact-text" for="name">UserName</label>
@@ -27,14 +28,11 @@
             <label for="request-about" class="contact-text">Iconimage</label>
             <textarea name="request-about" id="request-about" cols="40" rows="4">
             </textarea>
-            <input id=”image” type=”file” name=”image“ enctype="multipart/form-data" value="ファイルを選択">
+            <input id="image" type="file" name="image">
           </div>
           <div class="ct-block">
             <input class="send-button" type="submit" value="更新">
           </div>
         </form>
-    </div>
-  </section>
-
 
 @endsection
