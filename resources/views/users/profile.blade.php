@@ -2,8 +2,8 @@
 
 @section('content')
 
-  @csrf
         <form method="POST" action="/upload" enctype="multipart/form-data">
+          @csrf
           <div class="ct-block">
             <img src="/images/{{ $userimage }}">
             <label class="contact-text" for="name">UserName</label>
