@@ -2,12 +2,7 @@
 
 @section('content')
 
-    <section id="contact">
-      <div class="container">
-          <div class="title">
-            <p class="ja-title"></p>
-          </div>
-        <form action="index.php" method="post">
+          <form method="POST" action="/upload" enctype="multipart/form-data">
           <div class="ct-block">
             <img src="/images/{{ $userimage }}">
             <label class="contact-text" for="name">UserName</label>
@@ -30,12 +25,9 @@
           </div>
           <div class="ct-block">
             <label for="request-about" class="contact-text">Iconimage</label>
-            <textarea name="request-about" id="request-about" cols="60" rows="6">
+            <textarea name="request-about" id="request-about" cols="40" rows="4">
             </textarea>
-            <form method="POST" action="/upload" enctype="multipart/form-data">
-              @csrf
-              <input type="file" name="image">
-            </form>
+            <input id=”image” type=”file” name=”image“ enctype="multipart/form-data" value="ファイルを選択">
           </div>
           <div class="ct-block">
             <input class="send-button" type="submit" value="更新">
