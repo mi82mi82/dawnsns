@@ -52,6 +52,7 @@ class UsersController extends Controller
         $image->name = $file_name;
         $image->path = 'storage/' . $dir . '/' . $file_name;
         $image->save();
+        dd($request->file('image'));
 
         return redirect('/');
     }
