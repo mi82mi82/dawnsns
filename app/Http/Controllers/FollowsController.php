@@ -27,8 +27,23 @@ class FollowsController extends Controller
             'follower_count' => $follower_count
         ]);
     }
+
+
     public function followerList(){
-        return view('follows.followerList');
+        // 修正中
+        $user = auth()->user();
+        $is_following = $login_user->isFollowing($login_user->id);
+        $is_followed = $login_user->isFollowed($login_user->id);
+        $follow_count = $follow->getFollowCount($login_user->id);
+        $follower_count = $follow->getFollowerCount($login_user->id);
+
+        return view('follows.followerList',[
+            'user'           => $user,
+            'is_following'   => $is_following,
+            'is_followed'    => $is_followed,
+            'follow_count'   => $follow_count,
+            'follower_count' => $follower_count
+        ]);
     }
 
     public function create(Request $request){
