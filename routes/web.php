@@ -51,7 +51,9 @@ Route::get('/search','UsersController@search');
 Route::group(['middleware' => 'auth'], function() {
 Route::get('/show','FollowsController@index');
 });
-Route::get('/follow-list','FollowsController@followList');
+Route::group(['middleware' => 'auth'], function() {
+Route::get('/followList','FollowsController@followList');
+});
 Route::get('/follower-list','FollowsController@followerList');
 Route::post('/follow/create','FollowsController@create');
 Route::post('/follow/delete','FollowsController@delete');
