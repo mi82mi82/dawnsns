@@ -12,13 +12,13 @@ use App\Follow;
 class FollowsController extends Controller
 {
     //
-    public function followList(Post $post, Follow $following_ids)
+    public function followList(Post $post, Follow $follow)
     {
         $user = auth()->user();
         $follow_ids = $follow->followingIds($user->id);
         $following_ids = $follow_ids->pluck('followed_id')->toArray();
         $timelines = $post->getTimelines($user->id, $following_ids);
-        return view('follows.followList',['timelines' => $timelines]);
+        return view('Follows.followList',['timelines' => $timelines]);
     }
 
     public function create(Request $request){
