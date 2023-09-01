@@ -50,7 +50,7 @@
                 <p>フォロー数following</p>
                 <p>〇〇名</p>
                 </div>
-                <p class="btn"><a href="">フォローリスト</a></p>
+                <p class="btn"><a href="/followList">フォローリスト</a></p>
                 <div>
                 <p>フォロワー数followers</p>
                 <p>〇〇名</p>
