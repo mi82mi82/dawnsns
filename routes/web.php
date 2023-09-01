@@ -31,6 +31,7 @@ Route::get('/added', 'Auth\RegisterController@added');
 
 //ログイン中のページ
 // 新規投稿
+Route::group(['middleware' => 'auth'], function() {
 Route::get('/top','PostsController@index');
 Route::post('/post/create','PostsController@create');
 // Route::get('/post/create-form', 'PostsController@createForm');
@@ -41,28 +42,25 @@ Route::patch('/post/update', 'PostsController@update');
 
 // 投稿削除
 Route::delete('/post/delete', 'PostsController@delete')->name('delete');
-Route::get('/profile','UsersController@profile');
 
 
 // フォローフォロワー機能
 Route::get('/search','UsersController@search');
 
 // ログインしているユーザーのフォローしているユーザー数、フォローされているユーザー数（count使って取得）
-Route::group(['middleware' => 'auth'], function() {
 Route::get('/show','FollowsController@index');
-});
+
 Route::get('/followList','FollowsController@followList');
 Route::get('/follower-list','FollowsController@followerList');
 Route::post('/follow/create','FollowsController@create');
 Route::post('/follow/delete','FollowsController@delete');
 
 // マイプロフィール機能
-Route::get('/search','UsersController@profile');
+Route::get('/profile','UsersController@profile');
 Route::POST('/upload','UsersController@upload');
 // Route::get('/search', 'UserController@profile')->name('user.index');
 
 // フォロー リスト（フォローしている人の投稿リスト）
-Route::group(['middleware' => 'auth'], function() {
 	Route::get('/followList', 'FollowsController@followList');
 	});
 
