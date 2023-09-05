@@ -62,6 +62,8 @@ Route::POST('/upload','UsersController@upload');
 
 // フォロー リスト（フォローしている人の投稿リスト）
 	Route::get('/followList', 'FollowsController@followList');
-	});
 
+// フォロワー リスト（フォローしている人の投稿リスト）
+Route::get('/followerList', 'FollowsController@followerList');
+	});
 
