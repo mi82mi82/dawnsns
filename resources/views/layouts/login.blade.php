@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="ページの内容を表す文章" />
     <title></title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
     <!--スマホ,タブレット対応-->
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <!--サイトのアイコン指定-->
@@ -25,10 +25,10 @@
     <header>
         <nav class="nav-menu">
             <div class = "container nav-wrapper">
-               <h1><a href="http://127.0.0.1:8000/top"><img src="images/main_logo.png"></a></h1>
+               <h1><a href="http://127.0.0.1:8000/top"><img src="/images/main_logo.png"></a></h1>
                         <div class="imgbox">
                             <p>{{ $user->username }}
-                              <span class="Arrow-Top"></span><img src="images/dawn.png">
+                              <span class="Arrow-Top"></span><img src="/images/dawn.png">
                             </p>
                         <div class="neko">
                           <ul class="menu-list">
