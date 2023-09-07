@@ -18,7 +18,10 @@ class Post extends Model
 
       public function getFollowTimeLines($follow_ids)
       {
-          return $this->whereIn('user_id', $follow_ids)->orderBy('created_at', 'DESC')->get();
+        if(is_array($follow_ids)){
+            return $this->whereIn('user_id', $follow_ids)->orderBy('created_at', 'DESC')->get();
+        }
+        return $this->where('user_id', $follow_ids)->orderBy('created_at', 'DESC')->get();
       }
 
       public function user()
