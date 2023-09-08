@@ -4,7 +4,7 @@
 
 <div>
   @foreach($icons as $icon)
-  <a href="">
+  <a href="/userProfile/{{ $icon->id }}">
     <img src="/images/{{ $icon->images }}" alt="">
   </a>
   @endforeach
@@ -20,7 +20,9 @@
 		 @foreach ($timelines as $timeline)
 			<tr class="posts-list">
 					<td class="posts-name">
+					<a href="/userProfile/{{ $timeline->user->id }}">
 						<img src="/images/{{ $timeline->user->images }}">
+					</a>
 					</td>
 					<td class="posts-name">
 						<p>{{ $timeline->user->username }}"</p>
