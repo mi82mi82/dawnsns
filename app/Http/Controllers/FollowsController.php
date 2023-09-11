@@ -11,14 +11,30 @@ use App\Follow;
 
 class FollowsController extends Controller
 {
-    //
+    //フォローリスト
     public function followList(Post $post, Follow $follow)
     {
         $user = auth()->user();
         $follow_ids = $follow->followingIds($user->id);
-        $following_ids = $follow_ids->pluck('followed_id')->toArray();
-        $timelines = $post->getTimelines($user->id, $following_ids);
-        return view('Follows.followList',['timelines' => $timelines]);
+        $timelines = $post->getFollowTimelines( $follow_ids);
+        $icons = DB::table('users')
+            ->whereIn('id', $follow_ids)
+            ->get();
+            // dd($follow_ids);
+        return view('Follows.followList',['timelines' => $timelines, 'icons' => $icons, 'user' => $user ]);
+    }
+
+    //フォロワーリスト
+    public function followerList(Post $post, Follow $follow)
+    {
+        $user = auth()->user();
+        $follow_ids = $follow->followerIds($user->id);
+        $timelines = $post->getFollowTimelines( $follow_ids);
+        $icons = DB::table('users')
+            ->whereIn('id', $follow_ids)
+            ->get();
+            // dd($follow_ids);
+        return view('Follows.followerList',['timelines' => $timelines, 'icons' => $icons, 'user' => $user ]);
     }
 
     public function create(Request $request){

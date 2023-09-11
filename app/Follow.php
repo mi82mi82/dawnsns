@@ -17,10 +17,10 @@ class Follow extends Model
   }
 
   // // フォロワーリスト
-  // public function followingIds(Int $user_id)
-  // {
-  //     return $this->where('follow', $user_id)->pluck('follower');
-  // }
+  public function followerIds(Int $user_id)
+  {
+      return $this->where('follow', $user_id)->pluck('follower');
+  }
 
 
 }
