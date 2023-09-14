@@ -1,7 +1,27 @@
 @extends('layouts.login')
 
 @section('content')
+<div>
+	<img src="/images/{{ $profile->images }}">
+	<p>{{ $profile->username }}</p>
+	<p>{{ $profile->bio }}</p>
+	@if($followings->contains($profile->id))
+	<form action="/follow/delete" method="post">
+					@csrf
+					<input type="hidden" name="id" value="{{$profile->id}}">
+					<input type="submit" value="フォロー外す">
+	</form>
 
+	@else
+
+	<form action="/follow/create" method="post">
+					@csrf
+					<input type="hidden" name="id" value="{{$profile->id}}">
+					<input type="submit" value="フォローする">
+	</form>
+	@endif
+
+</div>
 <table class='table table-hover'>
 		 <tr>
 				<th>投稿者アイコン</th>
