@@ -5,7 +5,7 @@
         <form method="POST" action="/upload" enctype="multipart/form-data">
           @csrf
           <div class="ct-block">
-            <img src="/images/{{ $userimage }}">
+            <img src="/storage/images/{{ $userimage }}">
             <label class="contact-text" for="name">UserName</label>
             <input type="text" name="Username" placeholder="Dawntown" class="form-name">
           </div>
