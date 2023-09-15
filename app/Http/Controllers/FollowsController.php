@@ -16,11 +16,11 @@ class FollowsController extends Controller
     {
         $user = auth()->user();
         $follow_ids = $follow->followingIds($user->id);
+        // dd($follow_ids);
         $timelines = $post->getFollowTimelines( $follow_ids);
         $icons = DB::table('users')
             ->whereIn('id', $follow_ids)
             ->get();
-            // dd($follow_ids);
         return view('Follows.followList',['timelines' => $timelines, 'icons' => $icons, 'user' => $user ]);
     }
 
