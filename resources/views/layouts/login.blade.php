@@ -18,8 +18,6 @@
     <!--iphoneのアプリアイコン指定-->
     <link rel="apple-touch-icon-precomposed" href="画像のURL" />
     <!--OGPタグ/twitterカード-->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/js/script.js"></script>
 </head>
 <body>
     <header>
@@ -47,13 +45,13 @@
             <div id="confirm">
                 <p>{{ $user->username }}さんの</p>
                 <div>
-                <p>フォロー数following</p>
-                <p>〇〇名</p>
+                <p>フォロー数</p>
+                <p>{{ $followCount }}名</p>
                 </div>
                 <p class="btn"><a href="/followList">フォローリスト</a></p>
                 <div>
-                <p>フォロワー数followers</p>
-                <p>〇〇名</p>
+                <p>フォロワー数</p>
+                <p>{{ $followerCount }}名</p>
                 </div>
                 <p class="btn"><a href="/followerList">フォロワーリスト</a></p>
             </div>
@@ -62,5 +60,7 @@
     </div>
     <footer>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>
