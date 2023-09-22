@@ -12,16 +12,16 @@ class Post extends Model
 
     public function getTimeLines(Int $user_id, Array $follow_ids)
       {
-          
           return $this->whereIn('user_id', $follow_ids)->orWhere('user_id', $user_id)->orderBy('created_at', 'DESC')->get();
       }
 
       public function getFollowTimeLines($follow_ids)
       {
-        if($follow_ids->isEmpty()){
-            return collect();
+        if( is_array($follow_ids)){
+            return $this->whereIn('user_id', $follow_ids)->orderBy('created_at', 'DESC')->get();
+        } else {
+            return $this->where('user_id', $follow_ids)->orderBy('created_at', 'DESC')->get();
         }
-        return $this->whereIn('user_id', $follow_ids)->orderBy('created_at', 'DESC')->get();
       }
 
       public function user()
