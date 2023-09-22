@@ -17,9 +17,15 @@ class UsersController extends Controller
         return view('users.profile',compact('user','userimage'));
     }
 
-    public function search(){
+    public function search(Request $request){
         $user=auth()->user();
-        $getUsers= DB::table('users')->get();
+        if($request->search){
+            $getUsers= DB::table('users')
+                ->where('username', 'like', "%$request->search%")
+                ->get();
+        } else {
+            $getUsers= DB::table('users')->get();
+        }
         $followings= DB::table('follows')
             ->where('follower',Auth::id())
             ->pluck('follow');
