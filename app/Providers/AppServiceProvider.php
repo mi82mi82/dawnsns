@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +25,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->composer('*', function($view){
+            $view->with('followCount', DB::table('follows')->where('follower', Auth::id())->count());
+            $view->with('followerCount', DB::table('follows')->where('follow', Auth::id())->count());
+        });
     }
 }
