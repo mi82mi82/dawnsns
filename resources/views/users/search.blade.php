@@ -1,7 +1,7 @@
 @extends('layouts.login')
 
 @section('content')
-{!! Form::open(['class' => ''],['url' => '/search']) !!}
+{!! Form::open(['url' => '/search', 'method' => 'get']) !!}
         <div class="">
             {!! Form::input('text', 'search', null, ['required', 'class' => 'form-control', 'placeholder' => 'ユーザー名']) !!}
 						<button type="submit" class="btn btn-success pull-right">検索</button>
