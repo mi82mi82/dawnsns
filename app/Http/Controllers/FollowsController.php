@@ -17,7 +17,11 @@ class FollowsController extends Controller
         $user = auth()->user();
         $follow_ids = $follow->followingIds($user->id);
         // dd($follow_ids);
-        $timelines = $post->getFollowTimelines( $follow_ids);
+        if($follow_ids->isEmpty()){
+            $timelines = collect();
+        } else {
+            $timelines = $post->getFollowTimelines( $follow_ids);
+        }
         $icons = DB::table('users')
             ->whereIn('id', $follow_ids)
             ->get();
@@ -29,7 +33,11 @@ class FollowsController extends Controller
     {
         $user = auth()->user();
         $follow_ids = $follow->followerIds($user->id);
-        $timelines = $post->getFollowTimelines( $follow_ids);
+        if($follow_ids->isEmpty()){
+            $timelines = collect();
+        } else {
+            $timelines = $post->getFollowTimelines( $follow_ids);
+        }
         $icons = DB::table('users')
             ->whereIn('id', $follow_ids)
             ->get();
@@ -64,9 +72,9 @@ class FollowsController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-
-        // フォロー数とフォロワー数取得
-    
     }
+
+    // フォロー数とフォロワー数取得
+    
     }
 
