@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <div class='container'>
-{!! Form::open(['class' => 'pan'],['url' => 'post/create']) !!}
+{!! Form::open(['url' => 'post/create', 'class' => 'pan']) !!}
         <div class="form-groupup">
             {!! Form::input('text', 'newPost', null, ['required', 'class' => 'form-control', 'placeholder' => 'なにをつぶやこうか...？']) !!}
 						<button type="submit" class="btn btn-success pull-right"><img src="images/post.png"></button>
@@ -35,10 +35,10 @@
 					</td>
 					<td class="tdtd">
 						@if ($post-> user_id == Auth::id())
-						<div class="posts-edit">
+						<div class="posts-edit" data-target="{{ $post->id }}">
 							<img src="images/edit.png">
 						</div>
-						<div class="edit-content">
+						<div class="edit-content" id="{{ $post->id }}">
 							{!! Form::open(['url' => '/post/update']) !!}
 								@method('patch')
 								<div class="form-group">
@@ -50,9 +50,8 @@
 						</div>
 						{!! Form::open(['url' => '/post/delete']) !!}
 							{!! Form::hidden('id', $post->id) !!}
-							<a class="btn btn-danger" href="/post/{{ $post->id }}/delete" onclick="return confirm('こちらのつぶやきを削除します。よろしいでしょうか？')"><img src="images/trash_h.png"></a>
 							@method('delete')
-							{{ csrf_field() }}
+							<button type="submit" class="btn btn-success pull-right" onclick="return confirm('こちらのつぶやきを削除します。よろしいでしょうか？')"><img src="images/trash_h.png"></button>
 						{!! Form::close() !!}
 						@endif
 					</td>
