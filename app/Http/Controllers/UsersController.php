@@ -42,19 +42,26 @@ class UsersController extends Controller
     // ログインユーザーのプロフィール画像
     public function upload(Request $request)
     {
-
+        $update = [];
+        $update['username'] = $request->Username;
+        $update['mail'] = $request->mail;
+        if($request->newPassword){
+            $update['password'] = bcrypt($request->newPassword);
+        }
+        $update['bio'] = $request->bio;
+        $update['updated_at'] = now();
+        if($request->image){
         // アップロードされたファイル名を取得
         $file_name = $request->file('image')->getClientOriginalName();
-
+        $update['images'] = $file_name;
         // 取得したファイル名で保存
         $request->file('image')->storeAs('images', $file_name, 'public');
-
+        }
         // ファイル情報をDBに保存
         DB::table('users')
             ->where('id',Auth::id())
-            ->update([
-                'images'=>$file_name,
-            ]);
+            ->update($update);
+        
         return redirect('/profile');
 
     }
