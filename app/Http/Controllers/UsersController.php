@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Post;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class UsersController extends Controller
 {
@@ -39,9 +41,31 @@ class UsersController extends Controller
         $this->middleware('auth');
     }
 
-    // ログインユーザーのプロフィール画像
+    // ログインユーザーのプロフィール内容更新
     public function upload(Request $request)
     {
+        // プロフィール内容更新のバリデーション
+        Validator::make($request->all(),
+            [
+                'Username' => ['required','between:4,12'],
+                'mail' => ['required', 'email','between:4,50',Rule::unique('users')->ignore(Auth::id(), 'id')],
+                'newPassword' => ['nullable', 'alpha_num','between:4,12'],
+                'bio' => ['nullable','max:200'],
+                'image' => ['nullable', 'image'],
+            ],
+
+            [
+                'Username.required' => '入力必須',
+                'Username.between' => '4〜12文字以上で入力してください',
+                'mail.required' => '入力必須',
+                'mail.unique' => '登録済みアドレス使用不可',
+                'mail.between' => '4〜50文字以上で入力してください',
+                'newPassword.alpha_num' => '英数字のみ',
+                'newPassword.between' => '4〜12文字以上で入力してください',
+                'bio' => '200文字以内で入力してください',
+                'image' => 'ファイル名が英数字のみ','画像(jpg,png,bmp,gif,svg)ファイル以外は不可'
+            ]
+        )->validate();
         $update = [];
         $update['username'] = $request->Username;
         $update['mail'] = $request->mail;
@@ -79,5 +103,12 @@ class UsersController extends Controller
             ->pluck('follow');
 
         return view('users.usersProfile',['timelines' => $timelines, 'user'=>$user,'profile'=>$profile,'followings'=>$followings]);
+    }
+
+    // プロフィールの編集バリデーション
+    public function profileupdate(Request $request){
+        
+
+        return redirect('/profile');
     }
 }
