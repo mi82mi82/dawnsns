@@ -47,14 +47,6 @@ class PostsController extends Controller
         return redirect('/top');
     }
 
-    // public function updateForm($id)
-    // {
-    //     $post = DB::table('posts')
-    //         ->where('id', $id)
-    //         ->first();
-    //     return view( ['posts' => $post]);
-    // }
-
     // 投稿更新
     public function update(Request $request)
     {
