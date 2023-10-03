@@ -90,4 +90,15 @@ class PostsController extends Controller
             $table->timestamps();
         });
     }
+
+    // テストログインしているユーザーの投稿一覧
+    public function user(){
+        $user = auth()->user();
+        $posts = DB::table('posts')
+            ->join('users','posts.user_id','=','users.id')
+            ->select('posts.id','posts.posts')
+            ->where('users.id',Auth::id())
+            ->get();
+        return view('posts.user',compact('posts'));
+    }
 }

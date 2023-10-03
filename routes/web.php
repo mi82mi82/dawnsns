@@ -36,6 +36,9 @@ Route::get('/top','PostsController@index');
 Route::post('/post/create','PostsController@create');
 // Route::get('/post/create-form', 'PostsController@createForm');
 
+// テストログインしているユーザーの投稿一覧
+Route::get('/test','PostsController@user');
+
 // 投稿更新
 Route::get('/post/update', 'PostsController@update');
 Route::patch('/post/update', 'PostsController@update');
