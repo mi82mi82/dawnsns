@@ -47,7 +47,7 @@ class PostsController extends Controller
         return redirect('/top');
     }
 
-    // 投稿更新
+    // 投稿編集
     public function update(Request $request)
     {
         $request -> validate([

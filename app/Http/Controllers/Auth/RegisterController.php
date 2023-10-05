@@ -63,6 +63,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // テーブル名「users」を単数形にしたものがModelクラス名「User」で連携
         return User::create([
             'username' => $data['username'],
             'mail' => $data['mail'],
@@ -75,6 +76,7 @@ class RegisterController extends Controller
     //     return view("auth.register");
     // }
 
+    // 新規登録時のバリデーション
     public function register(Request $request){
         if($request->isMethod('post')){
             $data = $request->input();

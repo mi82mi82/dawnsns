@@ -39,7 +39,7 @@ Route::post('/post/create','PostsController@create');
 // テストログインしているユーザーの投稿一覧
 Route::get('/test','PostsController@user');
 
-// 投稿更新
+// 投稿編集
 Route::get('/post/update', 'PostsController@update');
 Route::patch('/post/update', 'PostsController@update');
 
