@@ -23,9 +23,11 @@
 Route::get('/login', 'Auth\LoginController@login')->name('login');
 Route::post('/login', 'Auth\LoginController@login');
 
+// 新規登録バリデーション
 Route::get('/register', 'Auth\RegisterController@register');
 Route::post('/register', 'Auth\RegisterController@register');
 
+// 新規登録完了画面
 Route::get('/added', 'Auth\RegisterController@added');
 
 
@@ -47,7 +49,7 @@ Route::patch('/post/update', 'PostsController@update');
 Route::delete('/post/delete', 'PostsController@delete')->name('delete');
 
 
-// フォローフォロワー機能
+// ユーザー検索機能
 Route::get('/search','UsersController@search');
 
 // ログインしているユーザーのフォローしているユーザー数、フォローされているユーザー数（count使って取得）

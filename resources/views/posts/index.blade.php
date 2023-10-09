@@ -35,9 +35,11 @@
 					</td>
 					<td class="tdtd">
 						@if ($post-> user_id == Auth::id())
+						<!-- 投稿内容変更したい時のボタン -->
 						<div class="posts-edit" data-target="{{ $post->id }}">
 							<img src="images/edit.png">
 						</div>
+						<!-- 投稿内容して更新する時のボタン -->
 						<div class="edit-content" id="{{ $post->id }}">
 							{!! Form::open(['url' => '/post/update']) !!}
 								@method('patch')

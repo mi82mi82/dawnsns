@@ -11,14 +11,14 @@ use Illuminate\Validation\Rule;
 
 class UsersController extends Controller
 {
-    //
+    //ログインユーザーのプロフィール画面
     public function profile(){
         $user=auth()->user();
         $userimage=auth()->user()->images;
         // dd($getUsers);
         return view('users.profile',compact('user','userimage'));
     }
-
+    // ユーザー検索機能
     public function search(Request $request){
         $user=auth()->user();
         if($request->search){
@@ -91,7 +91,7 @@ class UsersController extends Controller
     }
 
     public function userProfile($userId, Post $post)
-    {
+    // {   フォローやフォロワーリストからユーザーのプロフィールに飛ぶ
         $user = auth()->user();
         $timelines = $post->getFollowTimelines($userId);
         $profile = DB::table('users')

@@ -55,34 +55,34 @@ class PostsController extends Controller
         ]);
 
         $posts = DB::table('posts')
-        ->where('id',$request->id)
-        ->update([
-            'posts' => $request->upPost,
-            'updated_at'=> now(),
+            ->where('id',$request->id)
+            ->update([
+                'posts' => $request->upPost,
+                'updated_at'=> now(),
         ]);
 
         return back();
     }
 
 
-     // 削除する
- public function delete(Request $request)
- {
-    //  dd($request->id);
+     // 投稿削除する
+    public function delete(Request $request)
+    {
+        //  dd($request->id);
 
-     $posts = DB::table('posts')
-     ->where('id',$request->id)
-     ->delete();
+        $posts = DB::table('posts')
+        ->where('id',$request->id)
+        ->delete();
 
-    //  自分の投稿のみ編集と削除が可能
-    $user_id = Auth::id();
+        //  自分の投稿のみ編集と削除が可能
+        $user_id = Auth::id();
 
-    //  return redirect('/post/delete');
-     return back();
- }
+        //  return redirect('/post/delete');
+        return back();
+    }
 
 //  プルダウンメニュー作成
- public function up()
+    public function up()
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id('category_id');

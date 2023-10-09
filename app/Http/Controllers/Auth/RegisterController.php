@@ -112,4 +112,10 @@ class RegisterController extends Controller
         }
         return view('auth.register');
     }
+
+    public function added(){
+        $data = session('key');
+
+        return view('auth.added',compact('data'));
+    }
 }
