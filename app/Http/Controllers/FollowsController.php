@@ -74,7 +74,5 @@ class FollowsController extends Controller
         $this->middleware('auth');
     }
 
-    // フォロー数とフォロワー数取得
-    
-    }
+}
 

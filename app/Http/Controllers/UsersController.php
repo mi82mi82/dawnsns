@@ -91,8 +91,9 @@ class UsersController extends Controller
     }
 
     public function userProfile($userId, Post $post)
-    // {   フォローやフォロワーリストからユーザーのプロフィールに飛ぶ
-        $user = auth()->user();
+    {
+        // フォローやフォロワーリストからユーザーのプロフィールに飛ぶ
+        $user=auth()->user();
         $timelines = $post->getFollowTimelines($userId);
         $profile = DB::table('users')
             ->where('id', $userId)
