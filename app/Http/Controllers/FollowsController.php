@@ -11,7 +11,7 @@ use App\Follow;
 
 class FollowsController extends Controller
 {
-    //フォローリスト
+    //フォローしている人の投稿リスト
     public function followList(Post $post, Follow $follow)
     {
         $user = auth()->user();
@@ -45,6 +45,7 @@ class FollowsController extends Controller
         return view('Follows.followerList',['timelines' => $timelines, 'icons' => $icons, 'user' => $user ]);
     }
 
+    // フォローする
     public function create(Request $request){
         $id=$request->id;
         
@@ -57,6 +58,7 @@ class FollowsController extends Controller
         return back();
 
     }
+    // フォロー外す
     public function delete(Request $request){
         $id=$request->id;
         DB::table('follows')

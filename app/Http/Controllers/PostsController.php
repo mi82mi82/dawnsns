@@ -73,10 +73,6 @@ class PostsController extends Controller
         $posts = DB::table('posts')
         ->where('id',$request->id)
         ->delete();
-
-        //  自分の投稿のみ編集と削除が可能
-        $user_id = Auth::id();
-
         //  return redirect('/post/delete');
         return back();
     }

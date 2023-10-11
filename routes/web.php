@@ -55,21 +55,21 @@ Route::get('/search','UsersController@search');
 // ログインしているユーザーのフォローしているユーザー数、フォローされているユーザー数（count使って取得）
 Route::get('/show','FollowsController@index');
 
-Route::get('/followList','FollowsController@followList');
-Route::get('/follower-list','FollowsController@followerList');
+// フォローするとフォロー外す
 Route::post('/follow/create','FollowsController@create');
 Route::post('/follow/delete','FollowsController@delete');
 
 // マイプロフィール機能
 Route::get('/profile','UsersController@profile');
 Route::POST('/upload','UsersController@upload');
-// Route::get('/search', 'UserController@profile')->name('user.index');
 
-// フォロー リスト（フォローしている人の投稿リスト）
+// フォロー リスト（自分がフォローした人のユーザー一覧リスト）
 	Route::get('/followList', 'FollowsController@followList');
 
-// フォロワー リスト（フォローしている人の投稿リスト）
+// フォロワー リスト（自分をフォローしてる人のユーザー一覧リスト）
 Route::get('/followerList', 'FollowsController@followerList');
+
+// フォローリストやフォロワーリストからユーザープロフィールに飛ぶ
 Route::get('/userProfile/{userId}', 'UsersController@userProfile');
 
 Route::get('/logout','Auth\LoginController@logout');

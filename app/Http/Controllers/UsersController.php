@@ -28,6 +28,7 @@ class UsersController extends Controller
         } else {
             $getUsers= DB::table('users')->get();
         }
+        // ユーザー検索のフォローするフォロー外す機能
         $followings= DB::table('follows')
             ->where('follower',Auth::id())
             ->pluck('follow');
