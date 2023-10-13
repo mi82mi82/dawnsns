@@ -18,6 +18,7 @@ class UsersController extends Controller
         // dd($getUsers);
         return view('users.profile',compact('user','userimage'));
     }
+    
     // ユーザー検索機能
     public function search(Request $request){
         $user=auth()->user();
@@ -91,9 +92,9 @@ class UsersController extends Controller
 
     }
 
+    // フォローやフォロワーリストからユーザーのプロフィールに飛ぶ
     public function userProfile($userId, Post $post)
     {
-        // フォローやフォロワーリストからユーザーのプロフィールに飛ぶ
         $user=auth()->user();
         $timelines = $post->getFollowTimelines($userId);
         $profile = DB::table('users')

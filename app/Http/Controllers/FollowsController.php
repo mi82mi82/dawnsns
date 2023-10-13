@@ -18,9 +18,10 @@ class FollowsController extends Controller
         $follow_ids = $follow->followingIds($user->id);
         // dd($follow_ids);
         if($follow_ids->isEmpty()){
+            // もし自分がフォローしている人のidが空だったら、空のデータを送ってね！
             $timelines = collect();
         } else {
-            $timelines = $post->getFollowTimelines( $follow_ids);
+            $timelines = $post->getFollowTimelines( $follow_ids );
         }
         $icons = DB::table('users')
             ->whereIn('id', $follow_ids)

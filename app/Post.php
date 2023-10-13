@@ -15,6 +15,7 @@ class Post extends Model
           return $this->whereIn('user_id', $follow_ids)->orWhere('user_id', $user_id)->orderBy('created_at', 'DESC')->get();
       }
 
+    //   自分がフォローしている人の投稿一覧
       public function getFollowTimeLines($follow_ids)
       {
         if( is_array($follow_ids)){

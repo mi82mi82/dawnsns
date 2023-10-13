@@ -72,6 +72,7 @@ Route::get('/followerList', 'FollowsController@followerList');
 // フォローリストやフォロワーリストからユーザープロフィールに飛ぶ
 Route::get('/userProfile/{userId}', 'UsersController@userProfile');
 
+// ログアウト機能
 Route::get('/logout','Auth\LoginController@logout');
 	});
 

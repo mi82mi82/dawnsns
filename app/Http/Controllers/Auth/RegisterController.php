@@ -91,16 +91,16 @@ class RegisterController extends Controller
 
             [
                 'username.required' => '入力必須',
-                'username.between' => '4〜12文字以上で入力してください',
+                'username.between' => 'username4〜12文字以上で入力してください',
                 'mail.required' => '入力必須',
                 'mail.unique' => '登録済みアドレス使用不可',
-                'mail.between' => '4〜12文字以上で入力してください',
+                'mail.between' => 'mail4〜12文字以上で入力してください',
                 'password.required' => '入力必須',
                 'password.alpha_num' => '英数字のみ',
-                'password.between' => '4〜12文字以上で入力してください',
+                'password.between' => 'password4〜12文字以上で入力してください',
                 'password-confirm.required' => '入力必須',
                 'password-confirm.alpha_num' => '英数字のみ',
-                'password-confirm.between' => '4〜12文字以上で入力してください',
+                'password-confirm.between' => 'password-confirm4〜12文字以上で入力してください',
                 'password-confirm.same' => 'Password入力と一致必須',
             ]
         )->validate();
